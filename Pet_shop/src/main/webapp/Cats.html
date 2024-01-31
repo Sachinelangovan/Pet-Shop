@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Pet Shop</title>
+    <link rel="stylesheet" href="Cats.css">
+</head>
+<body>
+
+<header>
+    <h1>Online Pet Shop</h1>
+    <nav>
+        <ul>
+            <li><a href="http://localhost:8080/Pet_shop/Index.html">Home</a></li>
+            <li><a href="http://localhost:8080/Pet_shop/Products.html">Products</a></li>
+            <li><a href="http://localhost:8080/Pet_shop/AboutUs.html">About Us</a></li>
+            <li><a href="http://localhost:8080/Pet_shop/Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+<!-- Inside the existing <main> section -->
+<section id="product-details" class="product-details">
+    <div class="product">
+        <img src="cat.jpg" alt="Cat">
+        <h2>Persian cat</h2>
+        <p class="description"></p>
+        <p class="price">$100</p> <!-- Add a price here -->
+        <button onclick="addToCart('Persia cat', 100)">Add to cart</button>
+    </div>
+</section>
+<!-- Similar modifications for other product sections -->
+<!-- Inside the existing <main> section -->
+<section id="product-details" class="product-details">
+    <div class="product">
+        <img src="cat.jpg" alt="Cat">
+        <h2>Maine coon</h2>
+        <p class="description"></p>
+        <p class="price">$100</p> <!-- Add a price here -->
+        <button onclick="addToCart('Persia cat', 100)">Add to cart</button>
+    </div>
+</section>
+<!-- Similar modifications for other product sections -->
+
+<section id="product-details" class="product-details">
+    <div class="product">
+        <img src="cat.jpg" alt="Cat">
+        <h2>American Shorthair</h2>
+        <p class="description"></p>
+        <p class="price">$100</p> <!-- Add a price here -->
+        <button onclick="addToCart('Persia cat', 100)">Add to cart</button>
+    </div>
+</section>
+<!-- Similar modifications for other product sections -->
+
+</main>
+
+<footer>
+    <p>&copy; 2024 Online Pet Shop. All rights reserved.</p>
+</footer>
+<script type="text/javascript">
+
+
+function addToCart(productName, price) {
+    // Retrieve the existing cart data from local storage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add the current product to the cart
+    cart.push({
+        name: productName,
+        price: price,
+    });
+
+    // Save the updated cart data back to local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Redirect to the cart page
+    window.location.href = 'http://localhost:8080/Pet_shop/Cart.html';
+}
+</script>
+
+</body>
+</html>

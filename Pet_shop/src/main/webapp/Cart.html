@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        /* Style to provide some spacing between items in the cart */
+        div.cart-item {
+            margin-bottom: 20px;
+        }
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#cart-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cart-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    text-align: center;
+}
+
+.cart-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+#total-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px;
+}
+
+#total-price:before {
+    content: "Total Price: $";
+}
+
+button#go-to-details {
+    background-color: #27ae60;
+}
+
+button#go-to-details:hover {
+    background-color: #218c54;
+}
+        
+    </style>
+</head>
+<body>
+
+<h1>Your Shopping Cart</h1>
+<button><a href="./Cats.html">Return</a></button>
+<div id="cart-content"></div>
+<p>Total Price: $<span id="total-price"></span></p>
+<button onclick="goToDetailsPage()">Go to Details Page</button>
+
+<script>
+    // Retrieve the cart data from local storage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Display the cart content
+    let cartContent = document.getElementById('cart-content');
+    let totalPriceElement = document.getElementById('total-price');
+
+    updateCartContent();
+
+    function updateCartContent() {
+        cartContent.innerHTML = '';
+        let totalPrice = 0;
+
+        cart.forEach((product, index) => {
+            cartContent.innerHTML += `
+                <div class="cart-item">
+                    <img src="cat.jpg" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <p class="price">$${product.price}</p>
+                    <button onclick="cancelItem(${index})">Cancel</button>
+                </div>
+            `;
+
+            // Add the price to the total
+            totalPrice += product.price;
+        });
+
+        // Display the total price
+        totalPriceElement.textContent = totalPrice.toFixed(2);
+    }
+
+    function cancelItem(index) {
+        // Remove the item from the cart array
+        cart.splice(index, 1);
+
+        // Save the updated cart data back to local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Refresh the cart content
+        updateCartContent();
+    }
+
+    function goToDetailsPage() {
+        // Redirect to the Details.html page
+        window.location.href = 'http://localhost:8080/Pet_shop/Details.html';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Pet Shop</title>
+    <style>
+/* Add these styles at the end of your existing CSS file or create a new one */
+
+#product-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.product-details .product {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.product-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.product-details h2 {
+    color: #4CAF50;
+}
+
+.product-details p {
+    margin-bottom: 10px;
+}
+
+.product-details .description {
+    text-align: left;
+}
+
+.product-details button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.product-details button:hover {
+    background-color: #45a049;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+.hero {
+    background-color: #f2f2f2;
+    padding: 50px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+    
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Online Pet Shop</h1>
+    <nav>
+        <ul>
+            <li><a href="http://localhost:8080/Pet_shop/Index.html">Home</a></li>
+            <li><a href="http://localhost:8080/Pet_shop/Products.html">Products</a></li>
+            <li><a href="http://localhost:8080/Pet_shop/AboutUs.html">About Us</a></li>
+            <li><a href="http://localhost:8080/Pet_shop/Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+<!-- Inside the existing <main> section -->
+<section id="product-details" class="product-details">
+    <div class="product">
+        <img src="cat.jpg" alt="Cat">
+        <h2>German Sheperd</h2>
+        <p class="description"></p>
+        <button>Add to cart</button>
+    </div>
+</section>
+<!-- Inside the existing <main> section -->
+<section id="product-details" class="product-details">
+    <div class="product">
+        <img src="cat.jpg" alt="Cat">
+        <h2>Labrador</h2>
+        <p class="description"></p>
+        <button>Add to cart</button>
+    </div>
+</section>
+
+<section id="product-details" class="product-details">
+    <div class="product">
+        <img src="cat.jpg" alt="Cat">
+        <h2>Goladen Retriver</h2>
+        <p class="description"></p>
+        <button onclick="">Add to cart</button>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 Online Pet Shop. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Online Pet Shop</title>
+    <link rel="stylesheet" href="Contact.css">
+</head>
+<body>
+
+<header>
+    <h1>Online Pet Shop</h1>
+    <nav>
+        <ul>
+            <li><a href="http://localhost:8080/Pet_shop/Index.html">Home</a></li>
+            <li><a href="http://localhost:8080/Pet_shop/Products.html">Products</a></li>
+            <li><a href="http://localhost:8080/Pet_shop/AboutUs.html">About Us</a></li>
+            <li><a href="http://localhost:8080/Pet_shop/Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="contact" class="contact-us">
+        <h2>Contact Us</h2>
+        <p>Have questions or concerns? Reach out to us!</p>
+
+        <form action="DemoServlet" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Online Pet Shop. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
